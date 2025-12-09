@@ -1,9 +1,7 @@
-'use client'
-
-import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import RatingStars from "@/components/ui/ratingStars"
 import Image from "next/image"
+import AddToCartButton from "./AddToCartButton"
 
 type ratingType = {
   "rating": number,
@@ -50,8 +48,8 @@ type productDetailType = {
 
 const ProductDetailSection = ({ detail }: { detail: productDetailType }) => {
   const discountedPrice = (detail?.price - ((detail?.discountPercentage * detail?.price) / 100)).toFixed(2)
-  
-  if(!detail || detail?.message){
+
+  if (!detail || detail?.message) {
     return (
       <div className="text-4xl font-bold">
         {detail?.message || 'No detail available'}
@@ -77,7 +75,15 @@ const ProductDetailSection = ({ detail }: { detail: productDetailType }) => {
               <div className="text-red-400 line-through">$ {detail?.price}</div>
               <div className="text-green-400">$ {discountedPrice}</div>
             </div>
-            <Button>Add to Cart</Button>
+
+            <AddToCartButton data={{
+              id: detail?.id,
+              title: detail?.title,
+              price: detail?.price,
+              quantity: 0,
+              discountPercentage: detail?.discountPercentage,
+              thumbnail: detail?.thumbnail
+            }} />
           </div>
         </div>
 
