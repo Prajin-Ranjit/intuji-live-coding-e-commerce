@@ -9,6 +9,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
+import RatingStars from "@/components/ui/ratingStars"
 import Image from "next/image"
 
 type productCardTypes = {
@@ -24,7 +25,9 @@ const ProductCards = ({ title, price, rating, thumbnail }: productCardTypes) => 
             <CardContent className="flex flex-col gap-2">
                 <Image alt={`${title} image`} src={thumbnail || '/no-image.png'} height={100} width={100} priority className="h-fit w-full object-cover"/>
                 <div className="flex flex-col gap-2">
-                    <div className="text-base font-semibold">{title}</div>
+                    <div className="text-sm font-semibold">{title}</div>
+                    <RatingStars rating={rating} />
+                    <div className="text-sm font-semibold text-green-400 text-right">${price}</div>
                 </div>
             </CardContent>
         </Card>
