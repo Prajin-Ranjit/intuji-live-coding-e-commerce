@@ -60,7 +60,7 @@ const ProductList = ({ data }: ProductListTypes) => {
 
     return (
         <div className="flex flex-col md:flex-row gap-2">
-            
+
             <div className="flex flex-col gap-2 w-full md:w-2/6">
                 <div className="font-bold text-center md:text-left py-4">Filter By:</div>
 
@@ -70,7 +70,13 @@ const ProductList = ({ data }: ProductListTypes) => {
             <div className="flex flex-col gap-3 w-full md:w-4/6">
                 <div className="grid grid-cols-4 gap-2">
                     {
-                        products?.map(item => <ProductCards key={item?.id} title={item?.title} price={item?.price} rating={item?.rating} thumbnail={item?.thumbnail} />)
+                        products?.map(item => <ProductCards
+                            key={item?.id}
+                            id={item?.id}
+                            title={item?.title}
+                            price={item?.price}
+                            rating={item?.rating}
+                            thumbnail={item?.thumbnail} />)
                     }
                 </div>
                 <ProductPagination limit={limit} skip={skip} total={total} />

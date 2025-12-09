@@ -11,17 +11,27 @@ import {
 } from "@/components/ui/card"
 import RatingStars from "@/components/ui/ratingStars"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 type productCardTypes = {
+    id: number
     title: string
     price: number
     rating: number
     thumbnail: string
 }
 
-const ProductCards = ({ title, price, rating, thumbnail }: productCardTypes) => {
+const ProductCards = ({ id, title, price, rating, thumbnail }: productCardTypes) => {
+    const router = useRouter()
+
+    function onCardClick(){
+        if(id){
+            router.push(`/${id}`)
+        }
+    }
+
     return (
-        <Card className="w-full cursor-pointer hover:scale-105">
+        <Card className="w-full cursor-pointer hover:scale-105" onClick={onCardClick}>
             <CardContent className="flex flex-col gap-2">
                 <Image alt={`${title} image`} src={thumbnail || '/no-image.png'} height={100} width={100} priority className="h-fit w-full object-cover"/>
                 <div className="flex flex-col gap-2">
