@@ -12,12 +12,10 @@ import { cn } from "@/lib/utils"
 import { Spinner } from "@/components/ui/spinner"
 
 type ProductPaginationTypes = {
-    limit: number
-    skip: number
     total: number
 }
 
-const ProductPagination = ({ limit, skip, total }: ProductPaginationTypes) => {
+const ProductPagination = ({ total }: ProductPaginationTypes) => {
     const [isPending, startTransition] = useTransition()
 
     const router = useRouter()

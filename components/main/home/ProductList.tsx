@@ -79,7 +79,7 @@ const ProductList = ({ data }: ProductListTypes) => {
                             thumbnail={item?.thumbnail} />)
                     }
                 </div>
-                <ProductPagination limit={limit} skip={skip} total={total} />
+                <ProductPagination total={total} />
             </div>
         </div>
     )
