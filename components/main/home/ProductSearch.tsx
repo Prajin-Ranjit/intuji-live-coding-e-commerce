@@ -22,6 +22,7 @@ const ProductSearch = () => {
             const params = new URLSearchParams(searchParams?.toString());
             if (debouncedSearchTerm) {
                 params.set('search', debouncedSearchTerm)
+                params.set('page', '1')
             } else {
                 params.delete('search')
             }
