@@ -89,7 +89,7 @@ const ProductDetailSection = ({ detail }: { detail: productDetailType }) => {
 
         <div className="flex flex-col gap-2 p-5">
           {
-            detail?.reviews?.map(item => <Card key={item?.comment} className="px-4">
+            detail?.reviews?.map((item, ind) => <Card key={ind} className="px-4">
               <div className="flex flex-row justify-between">
                 <div className="text-sm font-medium">
                   {item?.comment}
