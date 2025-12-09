@@ -2,6 +2,7 @@
 
 import ProductCards from "./ProductCards"
 import ProductPagination from "./ProductPagination"
+import ProductSearch from "./ProductSearch"
 
 type ratingTypes = {
     "rating": number,
@@ -55,19 +56,25 @@ type ProductListTypes = {
 }
 
 const ProductList = ({ data }: ProductListTypes) => {
-    const { products, limit, skip, total  } = data
+    const { products, limit, skip, total } = data
 
     return (
-        <div className="flex flex-col md:flex-row">
-            <div className="flex flex-col gap-3">
+        <div className="flex flex-col md:flex-row gap-2">
+            
+            <div className="flex flex-col gap-2 w-full md:w-2/6">
+                <div className="font-bold text-center md:text-left py-4">Filter By:</div>
+
+                <ProductSearch />
+            </div>
+
+            <div className="flex flex-col gap-3 w-full md:w-4/6">
                 <div className="grid grid-cols-4 gap-2">
                     {
                         products?.map(item => <ProductCards key={item?.id} title={item?.title} price={item?.price} rating={item?.rating} thumbnail={item?.thumbnail} />)
                     }
                 </div>
-                <ProductPagination limit={limit} skip={skip} total={total}/>
+                <ProductPagination limit={limit} skip={skip} total={total} />
             </div>
-
         </div>
     )
 }

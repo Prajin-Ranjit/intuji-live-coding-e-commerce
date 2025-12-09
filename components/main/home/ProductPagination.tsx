@@ -28,7 +28,7 @@ const ProductPagination = ({ limit, skip, total }: ProductPaginationTypes) => {
 
     function nextPage() {
         startTransition(() => {
-            const params = new URLSearchParams();
+            const params = new URLSearchParams(searchParams?.toString());
 
             if (getPageNumber) {
                 params.set('page', String(Number(getPageNumber) + 1))
@@ -42,7 +42,7 @@ const ProductPagination = ({ limit, skip, total }: ProductPaginationTypes) => {
 
     function prevPage() {
         startTransition(() => {
-            const params = new URLSearchParams();
+            const params = new URLSearchParams(searchParams?.toString());
             params.set('page', String(Number(getPageNumber) - 1))
             router.replace(`?${params}`)
         });
@@ -50,7 +50,7 @@ const ProductPagination = ({ limit, skip, total }: ProductPaginationTypes) => {
 
     function goToPage(num: number) {
         startTransition(() => {
-            const params = new URLSearchParams();
+            const params = new URLSearchParams(searchParams?.toString());
             params.set('page', String(num))
             router.replace(`?${params}`)
         });
