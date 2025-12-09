@@ -10,6 +10,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { ThemeToggleButton } from "./ThemeToggleButton"
+import CartButtonHydrated from "./CartButtonHydrated"
 
 export function NavigationBar() {
     return (
@@ -26,7 +27,10 @@ export function NavigationBar() {
                 </NavigationMenuList>
             </NavigationMenu>
 
-            <ThemeToggleButton />
+            <div className="flex flex-row gap-2 items-center justify-center">
+                <CartButtonHydrated />
+                <ThemeToggleButton />
+            </div>
         </div>
     )
 }

@@ -56,7 +56,7 @@ type ProductListTypes = {
 }
 
 const ProductList = ({ data }: ProductListTypes) => {
-    const { products, limit, skip, total } = data
+    const { products, total } = data
 
     return (
         <div className="flex flex-col md:flex-row gap-2">
