@@ -68,7 +68,7 @@ const ProductList = ({ data }: ProductListTypes) => {
             </div>
 
             <div className="flex flex-col gap-3 w-full md:w-4/6">
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                     {
                         products?.map(item => <ProductCards
                             key={item?.id}
