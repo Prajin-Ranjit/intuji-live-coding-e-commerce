@@ -1,6 +1,7 @@
 'use client'
 
 import ProductCards from "./ProductCards"
+import ProductPagination from "./ProductPagination"
 
 type ratingTypes = {
     "rating": number,
@@ -54,14 +55,19 @@ type ProductListTypes = {
 }
 
 const ProductList = ({ data }: ProductListTypes) => {
-    console.log(data)
+    const { products, limit, skip, total  } = data
+
     return (
         <div className="flex flex-col md:flex-row">
-            <div className="grid grid-cols-4 gap-1">
-                {
-                    data?.products?.map(item => <ProductCards key={item?.id} title={item?.title} price={item?.price} rating={item?.rating} thumbnail={item?.thumbnail} />)
-                }
+            <div className="flex flex-col gap-3">
+                <div className="grid grid-cols-4 gap-2">
+                    {
+                        products?.map(item => <ProductCards key={item?.id} title={item?.title} price={item?.price} rating={item?.rating} thumbnail={item?.thumbnail} />)
+                    }
+                </div>
+                <ProductPagination limit={limit} skip={skip} total={total}/>
             </div>
+
         </div>
     )
 }
