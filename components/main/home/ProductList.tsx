@@ -1,5 +1,7 @@
 'use client'
 
+import ProductCards from "./ProductCards"
+
 type ratingTypes = {
     "rating": number,
     "comment": string,
@@ -55,7 +57,11 @@ const ProductList = ({ data }: ProductListTypes) => {
     console.log(data)
     return (
         <div className="flex flex-col md:flex-row">
-            
+            <div className="grid grid-cols-4 gap-1">
+                {
+                    data?.products?.map(item => <ProductCards key={item?.id} title={item?.title} price={item?.price} rating={item?.rating} thumbnail={item?.thumbnail} />)
+                }
+            </div>
         </div>
     )
 }
