@@ -43,7 +43,6 @@ Approximately 5 hours
 ## Known Issues
 - Error management is still in Progress
 - Cart delete instantly deletes the item rather than show alert box first
-- 
 
 ## Assumptions Made
 - No real authentication required
