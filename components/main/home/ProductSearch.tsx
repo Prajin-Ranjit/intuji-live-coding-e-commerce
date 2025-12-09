@@ -19,13 +19,15 @@ const ProductSearch = () => {
 
     useEffect(() => {
         startTransition(() => {
+            // to keep the older params intact
             const params = new URLSearchParams(searchParams?.toString());
             if (debouncedSearchTerm) {
                 params.set('search', debouncedSearchTerm)
-                params.set('page', '1')
             } else {
                 params.delete('search')
             }
+            // to make sure every search or none there of will return to page 1
+            params.set('page', '1')
             router.replace(`?${params}`)
         });
     }, [debouncedSearchTerm]);
