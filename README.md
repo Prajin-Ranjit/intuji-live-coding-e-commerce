@@ -16,21 +16,36 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# E-Commerce Application
+it is a e commerce site that shows different products for the user to choose and buy from, they can filter through with search and use pagination to go through various pages. They can add product to cart and checkout. In cart user have the option to edit or delete their items.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
+- Next js - Easier setup, inbuild navigation routing, SEO functionailties, faster developer experience 
+- Zustand - Very little boiler plate to setup, best for small and medium projects, faster and easy to use
+- Tailwind - Easier to use, faster than other, small sizes, shad cn framework uses tailwind
 
-## Learn More
+## Features Completed
+- [x] Product listing with search and filters
+- [x] Product detail page
+- [x] Shopping cart with add/remove/update
+- [x] Cart persistence
+- [ ] User profiles (not completed)
 
-To learn more about Next.js, take a look at the following resources:
+## Setup Instructions
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start dev server: `npm run dev`
+4. Open browser to `http://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Time Spent
+Approximately 5 hours
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Known Issues
+- Error management is still in Progress
+- Cart delete instantly deletes the item rather than show alert box first
+- 
 
-## Deploy on Vercel
+## Assumptions Made
+- No real authentication required
+- Using mock data for products and details
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
